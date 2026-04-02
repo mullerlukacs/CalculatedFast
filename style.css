@@ -1,0 +1,145 @@
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-alt: #eef2ff;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --primary: #4f46e5;
+  --primary-2: #7c3aed;
+  --border: #e5e7eb;
+  --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  --success: #16a34a;
+  --danger: #dc2626;
+}
+
+[data-theme="dark"] {
+  --bg: #0b1220;
+  --surface: #111827;
+  --surface-alt: #1f2937;
+  --text: #e5e7eb;
+  --text-muted: #94a3b8;
+  --primary: #818cf8;
+  --primary-2: #a78bfa;
+  --border: #374151;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at top right, rgba(124,58,237,0.18), transparent 40%), var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.navbar {
+  backdrop-filter: saturate(1.4) blur(14px);
+  background-color: color-mix(in oklab, var(--surface) 85%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-pill {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #fff;
+  border-radius: 999px;
+  padding: .35rem .8rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.hero-card, .glass-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-card { padding: clamp(1.5rem, 5vw, 3rem); }
+
+.search-input {
+  border-radius: 999px;
+  padding: .9rem 1.1rem;
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+}
+
+.section-title {
+  font-size: clamp(1.4rem, 3vw, 2.15rem);
+  font-weight: 700;
+}
+
+.calculator-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  transition: transform .25s ease, box-shadow .25s ease;
+  height: 100%;
+}
+
+.calculator-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border: 0;
+  color: #fff;
+  border-radius: .8rem;
+}
+
+.calc-shell {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.calc-result {
+  background: var(--surface-alt);
+  border: 1px dashed var(--border);
+  border-radius: .9rem;
+  padding: .9rem 1rem;
+  min-height: 58px;
+}
+
+.seo-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: clamp(1rem, 4vw, 2rem);
+  box-shadow: var(--shadow);
+}
+
+.tool-grid {
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.tool-btn {
+  padding: .9rem;
+  border-radius: .85rem;
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  font-weight: 600;
+}
+
+.tool-btn:hover { background: color-mix(in oklab, var(--primary) 18%, var(--surface-alt)); }
+
+.footer-link { color: var(--text-muted); text-decoration: none; }
+.footer-link:hover { color: var(--primary); }
+
+.sticky-top-nav { position: sticky; top: 0; z-index: 1020; }
+
+.copy-btn {
+  border-radius: .65rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.hidden { display: none !important; }
+
+@media (max-width: 768px) {
+  .tool-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .tool-btn { padding: .8rem .3rem; }
+}
